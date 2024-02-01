@@ -9,18 +9,18 @@ import random
 
 # me == my email address
 # you == recipient's email address
-me = "donotreplysuperhacks@gmail.com"
+me = ""
 input_emails = input("Emails Seperated by Commas: ")
 emails = input_emails.split(',')
 
 
 firebaseConfig = {
-    "apiKey": "AIzaSyB4PU2fxocFm8cFKEQxHCxgBjVh3552Lbg",
-    "authDomain": "superhackticketing.firebaseapp.com",
-    "projectId": "superhackticketing",
-    "storageBucket": "superhackticketing.appspot.com",
-    "messagingSenderId": "791811168060",
-    "appId": "1:791811168060:web:e4387c96fd26f2d8307039",
+    "apiKey": "",
+    "authDomain": "",
+    "projectId": "",
+    "storageBucket": "",
+    "messagingSenderId": "",
+    "appId": "",
     "databaseURL": ""
 }
 
@@ -29,8 +29,8 @@ firebase = pyrebase.initialize_app(firebaseConfig)
 fstorage = firebase.storage()
 fauth = firebase.auth()
 
-email = 'jahsgdjhaSGUDYjahsdg@kajhsbdJKHG.com'
-password = '6EsS+Fzg!}sVg-NG'
+email = ''
+password = ''
 
 user = fauth.sign_in_with_email_and_password(email, password)
 
@@ -121,32 +121,8 @@ for you in emails:
 
     mail.starttls()
 
-    mail.login(me, 'QvCa5Rm`R-2Xz6L@')
+    mail.login(me, '')
     mail.sendmail(me, you, msg.as_string())
     mail.quit()
 
-'''
-# initalize the cam
-cap = cv2.VideoCapture(0)
-# initialize the cv2 QRCode detector
-detector = cv2.QRCodeDetector()
-while True:
-    _, img = cap.read()
-    # detect and decode
-    data, bbox, _ = detector.detectAndDecode(img)
-    # check if there is a QRCode in the image
-    if bbox is not None:
-        # display the image with lines
-        for i in range(len(bbox)):
-            # draw all lines
-            cv2.line(img, tuple(bbox[i][0]), tuple(
-                bbox[(i+1) % len(bbox)][0]), color=(255, 0, 0), thickness=2)
-        if data:
-            print("[+] QR Code detected, data:", data)
-    # display the result
-    cv2.imshow("img", img)
-    if cv2.waitKey(1) == ord("q"):
-        break
-cap.release()
-cv2.destroyAllWindows()
 '''
